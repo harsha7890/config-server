@@ -1,0 +1,7 @@
+db.url=jdbc:mysql://localhost:3306/user_db
+db.username=root
+db.password=login123
+
+hibernate.hbm2ddl.auto=update
+hibernate.show.sql=true
+hibernate.format.sql=true
