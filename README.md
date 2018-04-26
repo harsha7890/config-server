@@ -84,18 +84,22 @@ By default, the configuration values are read on the client’s startup, and not
 
 ----------------------------------------------------------------------------------------------------------------------------------
 Run & Test the application
+
 Build and Run Config Server Project :
 Open command prompt from server folder and run mvn clean install followed by mvn spring-boot:run
 This will start the config server service in 8888 port in localhost.
+
 Build and Run Config Client Project :
 Open command prompt from client folder and run mvn clean install followed by mvn spring-boot:run
 This will start the Config Client service in 7777 port of localhost.
+
 Test REST Endpoint:
 open the /message rest endpoint by browsing the url http://localhost:7777/message
 return Hello default - this is from config server
+
 Test Property Change:
 Change the message key from configuration file in the Git repository to something different.
 You can confirm that the Config Server sees the change by visiting http://localhost:8888/a-bootiful-client/default
 You need to invoke the refresh Spring Boot Actuator endpoint in order to force the client to refresh itself and draw the new value 
 Invoke the refresh Actuator endpoint by sending an empty HTTP POST to the client’s refresh endpoint, http://localhost:7777/actuator/refresh(use postman)
- Confirm it worked by reviewing the http://localhost:7777/message endpoint.
+Confirm it worked by reviewing the http://localhost:7777/message endpoint.
