@@ -12,14 +12,15 @@ Add @EnableConfigServer annotation on top of the class. By doing this we tell th
 
 	src/main/java
 
-import org.springframework.boot.SpringApplication;
+	
+	import org.springframework.boot.SpringApplication;
 	import org.springframework.boot.autoconfigure.SpringBootApplication;
 	import org.springframework.cloud.config.server.EnableConfigServer;
-	
+
 	@EnableConfigServer
 	@SpringBootApplication
 	public class ConfigServiceApplication {
-	    public static void main(String[] args) {        							SpringApplication.run(ConfigServiceApplication.class, args);
+	    public static void main(String[] args) {        										SpringApplication.run(ConfigServiceApplication.class, args);
 	    }
 	}
 
@@ -28,7 +29,7 @@ src/main/resources/application.properties
 server.port=8888 //port the server will be running on
 spring.cloud.config.server.git.uri=https://github.com/prajna1680/centralizedconfigservices.git //Git repo location 
 
------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 Creating Git Repository :
 
 Create a new directory in your file system.
@@ -40,7 +41,7 @@ Finally we need to commit the properties file by running command git commit –m
 	config-server-client.properties
 	message=Hello world from config server
 
------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 Creating config-client:
 
 Go to https://start.spring.io/and generate client project with dependencies actuator, web, config-client & import it into STS
@@ -58,6 +59,7 @@ Open the Spring Application class under src//main/java package
 Create a Spring REST controller that returns the resolved message property’s value. 
 By default, the configuration values are read on the client’s startup, and not again. You can force a bean to refresh its configuration - to pull updated values from the Config Server - by annotating the MessageRestController with the Spring Cloud Config @RefreshScope and then by triggering a  refresh event. 
 	src/main/java
+	
 	import org.springframework.beans.factory.annotation.Value;
 	import org.springframework.boot.SpringApplication;
 	import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -82,7 +84,7 @@ By default, the configuration values are read on the client’s startup, and not
 	    }
 	}
 
-----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 Run & Test the application
 
 Build and Run Config Server Project :
