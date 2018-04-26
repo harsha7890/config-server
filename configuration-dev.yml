@@ -1,7 +1,13 @@
-db.url=jdbc:mysql://localhost:3306/user_db
-db.username=root
-db.password=login123
-message = from yml file
-hibernate.hbm2ddl.auto=update
-hibernate.show.sql=true
-hibernate.format.sql=true
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bslota/config-repository.git
+          clone-on-start: true
+          search-paths: 'config/{application}'
+server:
+  port: 8888
+
