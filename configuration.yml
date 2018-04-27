@@ -1,3 +1,3 @@
-management.security.enabled:false
-username:stackroute
-password:stackroute
+management.security.enabled: "false"
+username: "stackroute"
+password: "stackroute"
